@@ -117,7 +117,7 @@ def do_request(db_connection, data):
     elif request_type == "agent data":
         processed, failed, total, seconds_spent = (len(data['data']), 0, len(data['data']), 0.0)
         response_data['response'] = "success"
-        response_data['info'] = ("processed: %d, failed: %d, total: %d, seconds_spent: %.5f" % (processed, failed, total, seconds_spent))
+        response_data['info'] = ("processed: %d, failed: %d, total: %d, seconds spent: %.5f" % (processed, failed, total, seconds_spent))
         for item in data['data']:
             touch_mtime(item['host'], item['key'], item['clock'])
 
