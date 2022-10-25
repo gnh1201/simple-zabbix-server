@@ -121,6 +121,9 @@ def do_request(db_connection, data):
         for item in data['data']:
             touch_mtime(item['host'], item['key'], item['clock'])
 
+    elif request_type == "active check heartbeat":
+        response_data['response'] = "success"
+
     return response_data
 
 def start():    #Main Program
